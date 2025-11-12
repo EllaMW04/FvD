@@ -58,6 +58,12 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
 
+  - Dark modus is niet beschikbaar.
+  - Video beelden/animaties kan je op pauze zetten.
+  - Alt werkt goed op de desktop versie.
+  - Headings en lists worden niet heel veel goed gebruikt.
+  - Animaties/videos flitsen niet teveel
+
 </details>
 
 
