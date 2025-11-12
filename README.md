@@ -36,15 +36,15 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  https://www.nbthieves.com/ 
+  https://www.nespresso.com/nl/nl/?cid=NL_2025-Jun_B2C_LOC_Branded-Corporate_Recurrent_BRA_CB_No_Search_SEM_WPP-Media___GA____Brand_MX_Corporate_AO__nespresso_e&ds_kid=25679146&utm_source=google&utm_medium=cpc&utm_campaign=NL_2023Mar_B2C_LOC_Brand-Platinum_One-shot_BRA_CB_No_NA&utm_content=SEM_GroupM_COM_PR_GA_GAD_-Corporate_Always-on_Brand_MX_-_AO_NA&utm_term=nespresso&utm_id=google_ads_19781180783&gclsrc=aw.ds&ds_rl=1281311&gad_source=1&gad_campaignid=19781180783&gbraid=0AAAAADysIRRU9ufixQsUnD7Pmra0VOwvX&gclid=CjwKCAiA_dDIBhB6EiwAvzc1cF2DkS1v-DJSmT0KJDsyKHJNIGXHPVN5BirJPEYuRC5SpWpxx20KqBoCsjoQAvD_BwE  
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/HoofdpaginaNespresso.png" width="375px" alt="De home page van de Nespresso website">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="omschrijving van de pagina">
+  <img src="readme-images/ProductpaginaNespresso.png" width="375px" alt=" een gedetailleerde product pagina van de Nespresso website">
  
 </details>
 
