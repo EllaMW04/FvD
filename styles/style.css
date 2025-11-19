@@ -1,0 +1,107 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text:#111;
+	--color-background:#eee;
+}
+
+
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+header {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 1rem;
+}
+
+header img{
+	width: 7em;
+	height: 2em;
+}
+
+
+
+
+
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    height: 100vh;
+    width: 250px;
+    background: white;
+    padding: 2rem;
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2); /* schaduw aan de rechterkant */
+}
+
+nav.open {
+    transform: translateX(0); /* schuift naar binnen vanaf links */
+}
+
+
+
+
+
+
+
+
+
+#MenuOpenen img {
+    width: 2em;
+    height: 2em;
+}
+
+#menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+#menu li {
+    margin-bottom: 1.5rem;
+}
+
+#menu li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+#MenuSluiten{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+
+
+
