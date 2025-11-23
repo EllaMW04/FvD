@@ -242,5 +242,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   1. https://www.w3schools.com/cssref/css3_pr_border-radius.php
   2. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   3. https://www.w3schools.com/cssref/pr_background-image.php
+  4. https://www.w3schools.com/cssref/pr_dim_line-height.php
 
 </details>
