@@ -239,8 +239,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
-  1. bron 1
-  2. bron 2
-  3. ...
+  1. https://www.w3schools.com/cssref/css3_pr_border-radius.php
+  2. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+  3. https://www.w3schools.com/cssref/pr_background-image.php
 
 </details>
