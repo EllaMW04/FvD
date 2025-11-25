@@ -243,5 +243,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   2. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   3. https://www.w3schools.com/cssref/pr_background-image.php
   4. https://www.w3schools.com/cssref/pr_dim_line-height.php
+  5. https://www.w3schools.com/tags/tag_figure.asp
+  6. https://css-tricks.com/using-styling-the-details-element/
 
 </details>
