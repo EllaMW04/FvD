@@ -29,11 +29,11 @@
                  "Lucida Sans", Tahoma, sans-serif;
 
     /* Font size */
-    --fs-klein: 0.875em;  /* kleine tekst, bv p in widgets */
-    --fs-basis: 1em;       /* standaard paragrafen */
-    --fs-subkopje: 1.25em; /* subkopjes of CTA */
-    --fs-h2: 2em;         /* h2 in jouw cards / artikelen */
-    --fs-h3: 1.5em;       /* h3 in boutique sectie */
+    --fs-klein: 0.875em;  
+    --fs-basis: 1em;      
+    --fs-subkopje: 1.25em; 
+    --fs-h2: 2em;         
+    --fs-h3: 1.5em;       
     
     /* Font weight */
     --fw-licht: 100;
@@ -97,7 +97,7 @@ a {
     text-decoration: none;
 }
 
-strong { font-weight: var(--fw-bold); }
+
 
 
 
