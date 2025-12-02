@@ -260,5 +260,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   6. https://css-tricks.com/using-styling-the-details-element/
   7. https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video
   8. https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+  9. https://www.youtube.com/watch?v=gmI5nvzv170&t=3s (Carrousel met html en css)
 
 </details>
