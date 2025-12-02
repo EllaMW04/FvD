@@ -247,6 +247,9 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. ChatGpT en andere AI horen er ook bij.
   Nb. Vermeld de bronnen ook in je code.
 
+  ChatGPT: Carrousel
+  Prompt: Hoe maak je een carrousel met html en css? Leg het semantisch correct uit. 
+
   1. https://www.w3schools.com/cssref/css3_pr_border-radius.php
   2. https://css-tricks.com/snippets/css/a-guide-to-flexbox/
   3. https://www.w3schools.com/cssref/pr_background-image.php
@@ -254,5 +257,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   5. https://www.w3schools.com/tags/tag_figure.asp
   6. https://css-tricks.com/using-styling-the-details-element/
   7. https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video
+  8. https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
 
 </details>
