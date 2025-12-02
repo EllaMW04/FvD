@@ -36,7 +36,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor kick-off werkgroep</summary>
 
   ### Je opdracht:
-  https://www.nespresso.com/nl/nl/?cid=NL_2025-Jun_B2C_LOC_Branded-Corporate_Recurrent_BRA_CB_No_Search_SEM_WPP-Media___GA____Brand_MX_Corporate_AO__nespresso_e&ds_kid=25679146&utm_source=google&utm_medium=cpc&utm_campaign=NL_2023Mar_B2C_LOC_Brand-Platinum_One-shot_BRA_CB_No_NA&utm_content=SEM_GroupM_COM_PR_GA_GAD_-Corporate_Always-on_Brand_MX_-_AO_NA&utm_term=nespresso&utm_id=google_ads_19781180783&gclsrc=aw.ds&ds_rl=1281311&gad_source=1&gad_campaignid=19781180783&gbraid=0AAAAADysIRRU9ufixQsUnD7Pmra0VOwvX&gclid=CjwKCAiA_dDIBhB6EiwAvzc1cF2DkS1v-DJSmT0KJDsyKHJNIGXHPVN5BirJPEYuRC5SpWpxx20KqBoCsjoQAvD_BwE  
+  https://www.nespresso.com/nl  
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   Home pagina:
@@ -58,11 +58,20 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Bevindingen
   Lijst met je bevindingen die in de test naar voren kwamen:
 
-  - Dark modus is niet beschikbaar.
-  - Video beelden/animaties kan je op pauze zetten.
+  - Dark modus is niet beschikbaar. Dat maakt het ook wat minder toegankelijk voor gebruikers die gevoelg zijn voor fel/wit licht.
+  - Video beelden/animaties kan je op pauze zetten. Dat werkt heel goed voor mensen die daar gevoeliger voor zijn. Dat als er een video/ animatie in beeld is dat je er wel voor kan kiezen om die op pauze te zetten en niet overprikkeld te raken van alle bewegende beelden.
   - Alt werkt goed op de desktop versie.
   - Headings en lists worden niet heel veel goed gebruikt.
-  - Animaties/videos flitsen niet teveel
+  - Groot gebruik van div. Zo is het echt super onoverzichtelijk waar alles te vinden is en de hele structuur van de website is niet leesbaar meer. Of je moet heel grondig gaan graven naar de semantische code.
+  - Animaties/videos flitsen niet teveel. 
+  - Font is misschien wat te licht voor gebruikers met verminderd zicht. Redelijk wat fonts hebben een lichte font weight, maar dat maakt het voor gebruikers die slechter zicht hebben misschien moeilijker om goed te kunnen lezen. Dat zou een goed aandachtspunt zijn.
+  - Ook niet bij elke afbeelding een alt tekst. Dat maakt het voor screenreaders wel moeilijk om een gebruiker met slecht zicht te laten begrijpen wat er te zien valt op de website.
+
+    Of te wel wat kan beter:
+    - Overal alt tag toevoegen en invullen
+    - Licht/dark modus toevoegen
+    - Zo min mogelijk gebruik van div
+    - Font weight wat groter maken zodat het voor iedereen zo goed mogelijk leesbaar kan zijn.
 
 </details>
 
@@ -114,10 +123,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - Gebruik van h2/h3 was nog niet helemaal op orde. H3 op plekken van h2 en andersom.
+  - Uiteindelijk een duidelijk antwoord over mijn hamburger menu. 
 
 </details>
 
@@ -132,6 +139,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Stand van zaken
   hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  - Ik wilde even weten hoe ik de CSS goed zo moeten opbouwen voor de tweede pagina die er dan bijkomt.
+  - Zijn het teveel classes?
 
 
   ### Agenda voor meeting
@@ -147,10 +156,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-- ...
+  - Niet teveel, maar kan misschien wel met minder.
+  - CSS opbouwen mag een beetje naar eigen invulling, wel tips gekregen hoe je het makkelijk zou kunnen aanpakken. 
 
 </details>
 
@@ -178,7 +185,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  - Laatste carrousel op de product pagina heb ik nog een beetje moeite mee.
+  - Is het genoeg voor surface plane??
 
 
   ### Agenda voor meeting
@@ -245,5 +253,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   4. https://www.w3schools.com/cssref/pr_dim_line-height.php
   5. https://www.w3schools.com/tags/tag_figure.asp
   6. https://css-tricks.com/using-styling-the-details-element/
+  7. https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video
 
 </details>
