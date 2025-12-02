@@ -66,12 +66,14 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   - Animaties/videos flitsen niet teveel. 
   - Font is misschien wat te licht voor gebruikers met verminderd zicht. Redelijk wat fonts hebben een lichte font weight, maar dat maakt het voor gebruikers die slechter zicht hebben misschien moeilijker om goed te kunnen lezen. Dat zou een goed aandachtspunt zijn.
   - Ook niet bij elke afbeelding een alt tekst. Dat maakt het voor screenreaders wel moeilijk om een gebruiker met slecht zicht te laten begrijpen wat er te zien valt op de website.
+  - Zit geen groot kleuren contrast in. Heel veel gebruikte kleuren zijn hoogswaarschijnlijk moeilijk te zien voor mensen met beperkt zicht en/of kleurenblind zijn.
 
     Of te wel wat kan beter:
     - Overal alt tag toevoegen en invullen
     - Licht/dark modus toevoegen
     - Zo min mogelijk gebruik van div
     - Font weight wat groter maken zodat het voor iedereen zo goed mogelijk leesbaar kan zijn.
+    - Contrast kleuren beter maken.
 
 </details>
 
