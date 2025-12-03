@@ -1,0 +1,993 @@
+/* Deze bron is eigenlijk bij alles wel een keer terug gekomen als geheugen steuntje*/
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+	/* startje */
+	--color-text:#000000;
+	--color-background:#eee;
+
+    /* Font family */
+    --font-body: NespressoLucas, Helvetica, Arial, sans-serif;
+
+    /* Font size */
+    --fs-klein: 0.875em;  
+    --fs-basis: 1em;       
+    --fs-subkopje: 1.25em; 
+    --fs-h2: 2em;         
+    --fs-h3: 1.5em;       
+    
+    /* Font weight */
+    --fw-licht: 100;
+    --fw-regulier: 400;
+    --fw-medium: 500;
+    --fw-bold: 900;
+
+    /* Line height */
+    --lh-default: 1.6;
+    --lh-tight: 1.3;
+}
+
+
+
+
+
+/****************/
+/*    Basis     */
+/****************/
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--fs-basis);
+    font-weight: var(--fw-regulier);
+    line-height: var(--lh-default);
+    color: var(--color-text, #000);
+}
+
+
+p {
+    font-size: var(--fs-basis);
+    font-weight: var(--fw-licht);
+    line-height: var(--lh-default);
+}
+
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
+
+h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+}
+
+
+h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+}
+
+
+a {
+    font-family: inherit;
+    font-size: var(--fs-klein);
+    font-weight: var(--fw-regulier);
+    color: inherit;
+    text-decoration: none;
+}
+
+strong { font-weight: var(--fw-bold); }
+
+
+
+
+
+/*************/
+/*   Header  */
+/*************/
+
+header {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: black 2px 2px 5px;
+    z-index: 1000;
+}
+
+header img{
+	width: 7em;
+	height: 2em;
+}
+
+header button {
+    border: white;
+    background-color: white;
+    margin-right: 2em;
+    z-index: 1001;
+}
+
+
+
+
+/*************/
+/*   Nav     */
+/*************/
+
+nav {
+    position: fixed;
+    top: 66.4px;
+    left: 0; 
+    height: 100vh;
+    width: 250px;
+    background: white;
+    padding: 2rem;
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2); /* schaduw aan de rechterkant */
+    z-index: 998;
+}
+
+nav.open {
+    transform: translateX(0); /* schuift naar binnen vanaf links */
+}
+
+
+
+
+
+/*************/
+/*   Menu    */
+/*************/
+
+#MenuOpenen img {
+    width: 2em;
+    height: 2em;
+}
+
+#menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+#menu li {
+    margin-bottom: 1.5rem;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#MenuSluiten{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+
+
+
+
+/*****************/
+/* Login Section */
+/*****************/
+
+.LoginSection {
+    /* De volgende afbeelding heb ik van de Nespresso instagram: https://www.instagram.com/p/DRMW0w-DEzB/?img_index=1 */
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("../readme-images/StartAfbeelding.png");
+
+    height:100vh; 
+
+    background-size:cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+
+    color: white;
+}
+
+.LoginSection h2,
+.LoginSection p {
+    margin-bottom: 1em;
+    font-weight: 50;
+}
+
+
+#LoginKnop {
+    background-color: white;
+    color: black;
+
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: 1em;
+
+
+    /* Bron: https://www.w3schools.com/cssref/css3_pr_border-radius.php*/
+    border-radius: 20px;
+    border-color: white;
+}
+
+
+
+
+
+/***********/
+/* Widgets */
+/***********/
+
+.WidgetKoffie,
+.WidgetMachines,
+.WidgetAccessoires {
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    height: 15.375rem;
+    margin: 1em;
+    margin-top: 2em;
+    padding: 1.5em;
+    color: white;
+}
+
+/*Bron: https://www.w3schools.com/cssref/pr_background-image.php*/
+
+.WidgetKoffie {
+    background-image: url("../readme-images/WidgetKoffie.png");
+}
+
+.WidgetMachines {
+    background-image: url("../readme-images/WidgetMachines.png");
+}
+
+.WidgetAccessoires {
+    background-image: url("../readme-images/WidgetAccessoires.png");
+    margin-bottom: 2em;
+}
+/* Tot hier is de bron gebruikt */
+
+
+
+
+/*****************************/
+/* Promotie en koffie sectie */
+/*****************************/
+
+.PromotiesEnKoffiesArtikel {
+    margin-left: 1em;
+    line-height: 1.6;
+}
+
+.PromotiesEnKoffiesArtikel h2,
+.PromotiesEnKoffiesArtikel p {
+    font-weight: 100;
+}
+
+.PromotiesEnKoffiesArtikel p {
+    padding-right: 1em;
+}
+
+.Carrousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 1em 0;
+}
+
+.Slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 1em;
+  padding: 0 1em;
+  list-style: none;
+  margin: 0;
+}
+
+.Slide {
+  min-width: 80%;
+  scroll-snap-align: start;
+}
+
+.Kaart {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  color: white;
+  aspect-ratio: 3 / 4;    
+}
+
+.Kaart img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* Foto goed vullen */
+  object-position: center; /* Eventueel aanpassen */
+  display: block;
+  z-index: 1;
+}
+
+.KaartContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent 40%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 2;
+}
+
+.KaartContent a {
+  margin-top: auto;
+  align-self: start;
+  background: white;
+  color: black;
+  padding: 0.7em 1.2em;
+  border-radius: 999px;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.KaartContent h2 {
+    font-size: var(--fs-basis);
+    font-weight: 100;
+}
+
+.KaartContent p {
+    font-size: var(--fs-klein);
+}
+
+
+
+
+
+
+/*******************/
+/* Boutique sectie */
+/*******************/
+
+.BoutiqueSectie{
+    /*afbeelding link: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nespresso.com%2Fnl%2Fnl%2Fboutique%2Famsterdam-van-baerlestraat&psig=AOvVaw2QQHXtFB3BBv41A5ydPqVL&ust=1763999039412000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiH2NbOiJEDFQAAAAAdAAAAABAE*/
+   background-image: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("../readme-images/BoutiqueNespresso.png");
+
+    height:100vh; 
+
+    background-size:cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:end;
+
+    color: white;
+    padding: 1.5em;
+    padding-bottom: 3em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.BoutiqueSectie p {
+    background-color: #876c43;
+    padding: .25em .5em;
+    border-radius: .25em;
+}
+
+.BoutiqueSectie h3 {
+    margin-bottom: 1.5em;
+    font-weight: 100;
+}
+
+.BoutiqueSectie button {
+    background-color: #257a57;
+    color: white;
+    border-color: #257a57;
+    border-radius: 20px;
+
+    padding: 1em;
+    width:100%;
+}
+
+
+
+
+
+/***********************/
+/* Verandering artikel */
+/***********************/
+
+.VeranderingArtikel {
+    margin-left: 1em;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+
+.VeranderingArtikel p {
+    padding-right: 1em;
+}
+
+.CarrouselLink2 img {
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.CarrouselLink2 a {
+    padding: 0;
+}
+
+
+
+
+
+
+
+/********************/
+/* Voordelen sectie */
+/********************/
+
+.VoordelenSectie {
+    margin-bottom: 1em;
+    /*  Bron: https://www.w3schools.com/cssref/pr_dim_line-height.php*/
+    line-height: 1.6;
+}
+
+.VoordelenSectie img {
+    width: 100%;
+    padding: 1em;
+}
+
+.VoordelenSectie h2 {
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+    font-size: var(--fs-h3);
+}
+
+.VoordelenSectie p {
+    margin-left: 1em;
+    padding-right: 1em;
+}
+
+.VoordelenSectie a {
+    margin-left: 1em;
+    margin-top: 1.5em;
+    color: #876c43;
+    text-decoration: underline;
+}
+
+
+
+
+
+/**********************/
+/* Doe de test sectie */
+/**********************/
+
+.DoeDeTest {
+    background-image: url("../readme-images/DoeDeTestAchtergrond.png");
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+
+    padding: 1.5em;
+}
+
+.DoeDeTest h3 {
+    margin-bottom: 1em;
+}
+
+.DoeDeTest button {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 0.5em;
+
+    background-color: #17171a;
+    color: white;
+
+    border: #17171a solid 1px;
+    border-radius: 20px;
+
+    width: 100%;
+}
+
+
+
+/**********/
+/* Footer */
+/**********/
+
+footer section {
+    margin: 1em;
+    margin-top: 1.5em;
+}
+
+.OntdekDeApp img {
+    width: 7em;
+	height: 4em;
+}
+
+.MenuLijst li {
+    list-style-type: none;
+}
+
+
+/*  Bron: https://css-tricks.com/using-styling-the-details-element/*/
+.FooterLijst {
+    border-top: #000 solid 0.5px;
+    padding: 0.5em ;
+}
+
+.FooterSocials ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.FooterSocials img {
+    width: 3em;
+    height: 3em;
+}
+
+.Copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.Copyright img {
+	width: 7em;
+	height: 2em;
+    margin-right: 1em;
+}
+
+.Copyright p {
+    color: #6f6f70;
+    font-size: var(--fs-klein);
+    margin-bottom: 0;
+}
+
+
+
+/*******************************************************************/
+/*             Hier begint de code voor de product pagina          */
+/*******************************************************************/
+
+.ProductPagina {
+    background-color: rgb(241, 235, 228);
+
+}
+
+.TerugNaarHome {
+    display: flex;
+    align-items: center;
+
+    background-color: #f0efee;
+    position: sticky;
+    padding: 0.5em;
+    top: 0px;
+    z-index: 9;
+   
+}
+
+.TerugNaarHome img{
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+
+}
+
+
+
+
+
+
+
+
+
+.PixieZilverNespresso p {
+    text-align: center;
+}
+
+.PixieZilverNespresso p:nth-of-type(6) {
+    margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+.FotoCarrousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgb(241, 235, 228);
+    padding: 2em 0;
+}
+
+.FotoCarrousel ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 300%;
+    transition: transform 0.4s ease;
+}
+
+.FotoCarrousel li {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.FotoCarrousel li img {
+    width: 70%;
+    height: auto;
+    pointer-events: none;
+}
+
+.KnopTerug, 
+.KnopVerder {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none; 
+    width: 2em;   
+    height: 2em;   
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.KnopTerug:hover, 
+.KnopVerder:hover {
+    background: #989898;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.KnopTerug::before {
+    content: '<';
+    font-size: 1.5em;
+}
+
+.KnopVerder::before {
+    content: '>';
+    font-size: 1.5em;
+}
+
+.KnopTerug { 
+    left: 1em; 
+    z-index: 8;
+}
+
+.KnopVerder { 
+    right: 1em; 
+    z-index: 8;
+}
+
+.Dots {
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+    margin-top: 1em;
+}
+
+.Dot {
+    width: .8em;
+    height: .8em;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.Dot:hover {
+    background: #999;
+}
+
+.Dot.actief {
+    background-color: black;
+}
+
+
+
+
+
+
+
+
+
+
+.ProductDetails{
+    background-color: white;
+    margin: 1em;
+    text-align: center;
+    box-shadow: rgb(201, 201, 201) 1px 1px 5px;
+}
+
+.ProductDetails label {
+    font-size: var(--fs-klein);
+    
+    background-color: #8f7247;
+    color: white;
+
+    padding: 0.25em;
+
+    border-radius: 5px;
+    position: absolute;
+    top: 470px;
+    right: 42%;
+}
+
+.ProductDetails ul {
+    padding: 1em;
+}
+
+.ProductDetails h2 {
+    margin-bottom: 0.25em;
+    margin-top: 0.25em;
+    padding-top:0.75em;
+}
+.ProductDetails p:first-of-type {
+    color: #565656;
+    font-size: var(--fs-klein);
+}
+
+.ProductDetails p:nth-of-type(2) {
+    color: #257a57;
+    font-size: var(--fs-h3);
+    margin-top: 2em;
+}
+
+.ProductDetails p:nth-of-type(3) {
+    color: #565656;
+    font-size: var(--fs-klein);
+    margin-bottom: 3em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ProductFeatures {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+
+    background-color: rgb(240, 240, 240);
+}
+
+
+.ProductFeatures li img {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+.ProductFeatures li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    
+}
+
+.ProductFeatures p {
+    color: #565656;
+}
+
+.BekijkInKeuken {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Aanbieding {
+        position: sticky;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #f0efee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 92px;
+        margin-top: 1em;
+
+
+
+}
+
+.Aanbieding button {
+    background-color: #257a57;
+    color: white;
+
+    padding: 1em;
+    margin: 2em;
+
+    border-color: #257a57;
+    border-radius: 10px;
+
+    font-weight: var(--fw-medium);
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.CarrouselOpProductPagina {
+  width: 100%;
+  overflow: hidden;
+  padding: 2em 0 2em 0; 
+
+
+  background-color: white;
+}
+
+.CarrouselOpProductPagina ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    padding: 1em;
+
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+.CarrouselOpProductPagina li {
+    flex: 0 0 80%;   /* elke slide is 80% van het scherm */
+    scroll-snap-align: center;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+
+.CarrouselOpProductPagina li img {
+  flex-shrink: 0;
+}
+
+
+.CarrouselOpProductPagina li h3 {
+    font-size: var(--fs-subkopje);
+    margin-bottom: 0.5em;
+    flex-shrink: 0;
+}
+
+
+.CarrouselOpProductPagina a {
+    color: #876c43;
+    text-decoration: underline;
+    margin-top: auto;
+}
+
+
+
+
+
+
+
+
+
+
+.IconicDesign {
+    background-color: rgb(240, 240, 240);
+
+    padding: 1em;
+}
+
+.IconicDesign h2 {
+    padding-bottom: 0.5em;
+}
+
+.IconicDesign p {
+    margin-bottom: 1em;
+}
+
+
+
+
+
+
+
+
+
+
+video {
+    width: 100%;
+}
