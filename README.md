@@ -187,8 +187,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  - Laatste carrousel op de product pagina heb ik nog een beetje moeite mee.
-  - Is het genoeg voor surface plane??
+  - Wat telt al als animatie?
+  - 
 
 
   ### Agenda voor meeting
