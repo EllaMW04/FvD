@@ -204,10 +204,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  Ik kwam deze meeting erachter dat als ik surface plane zou willen doen dat het dan wel echt moeilijk zal gaan worden, dus heb er toch voor gekozen om toch over te stappen op responsive. Dat werkt voor mij toch het beste.
 
 </details>
 
@@ -225,13 +222,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
+  Wat goed ging is dat ik het coderen opzich redelijk snel kon oppakken. Aan het begin een beetje paniek ervoor gehad of ik het nog wel kon. Wat ik geleerd heb (grootste punten) is hoe je responsive websites kan maken en hoe je een hamburger menu maakt. Het is vooral extra leuk als het dan ook echt lukt en je ziet dat het werkt. Ik heb ook geleerd dat dit vak wel samenkomt met redelijk wat dieptepunten in het proces. Ik ben namelijk 3 dagen voor de deadline overgestapt van surface plane naar responsive. Dat soort abrupte keuzes kwamen de hele tijd voor de afgelopen paar weken. Ik vond het wel echt weer leerzaam en leuk. 
 
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+  Het was mij niet meer gelukt om de header helemaal compleet te maken en de footer. Die waren responsive ook zo lastig, dat ik dat qua tijd niet meer voor elkaar heb gekregen. Ik ben zo goed mogelijk in de buurt gekomen, maar ik wilde bij mijn code blijven die ik nog begreep ipv dat ik het wel misschien had, maar dat mijn code een groot zooitje was.
 
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
 </details>
@@ -259,7 +256,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   5. https://www.w3schools.com/tags/tag_figure.asp
   6. https://css-tricks.com/using-styling-the-details-element/
   7. https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_video
-  8. https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
-  9. https://www.youtube.com/watch?v=gmI5nvzv170&t=3s (Carrousel met html en css)
+  9. Dark modus code van de slides (Week 1, werkgroep 1: presentatie over custom proporties)
+  10. https://www.youtube.com/watch?v=gmI5nvzv170&t=3s (Carrousel met html en css)
+  11. https://www.w3schools.com/css/css3_gradients.asp
 
 </details>
