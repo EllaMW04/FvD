@@ -1,0 +1,1760 @@
+/* Deze bron is eigenlijk bij alles wel een keer terug gekomen als geheugen steuntje*/
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+/* Ook heb ik bij redelijk wat stukjes van de opmaak gekeken bij de Nespresso site zelf. Wat zij hebben gedaan. Niet altijd gebruikt, maar soms ook wel.*/
+
+
+
+/**************/
+/* CSS REMEDY */
+/**************/
+
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+
+:root {
+	/* startje */
+	--color-text:#000000;
+	--color-background:#eee;
+
+    /* Font family */
+    --font-body: NespressoLucas, Helvetica, Arial, sans-serif;
+
+    /* Font size */
+    --fs-xklein:0.5em;
+    --fs-klein: 0.875em;  
+    --fs-basis: 1em;       
+    --fs-subkopje: 1.25em; 
+    --fs-h2: 2em;         
+    --fs-h3: 1.5em;  
+
+    
+    /* Font weight */
+    --fw-licht: 100;
+    --fw-regulier: 400;
+    --fw-medium: 500;
+    --fw-semibold: 700;
+    --fw-bold: 900;
+
+    /* Line height */
+    --lh-default: 1.6;
+    --lh-tight: 1.3;
+}
+
+
+
+
+
+
+
+/****************/
+/*    Basis     */
+/****************/
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--fs-basis);
+    font-weight: var(--fw-regulier);
+    line-height: var(--lh-default);
+    color: var(--color-text, #000);
+}
+
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+
+p {
+    font-size: var(--fs-basis);
+    font-weight: var(--fw-licht);
+    line-height: var(--lh-default);
+}
+
+
+strong {
+    font-weight: var(--fw-bold);
+}
+
+
+h2 {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+}
+
+
+h3 {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-medium);
+    line-height: var(--lh-tight);
+}
+
+
+a {
+    font-family: inherit;
+    font-size: var(--fs-klein);
+    font-weight: var(--fw-regulier);
+    color: inherit;
+    text-decoration: none;
+}
+
+
+
+
+
+/*************/
+/*   Header  */
+/*************/
+
+header {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 1rem;
+    box-shadow: black 2px 2px 5px;
+    z-index: 1000;
+}
+
+header img{
+	width: 7em;
+	height: 2em;
+}
+
+header button {
+    border: white;
+    background-color: white;
+    margin-right: 2em;
+    z-index: 1001;
+}
+
+
+.Hamburger {
+    display: block;
+}
+
+.DesktopNav {
+    display: none;
+}
+
+
+nav.open .DesktopNav {
+    display: block;
+}
+
+
+/*Desktop*/
+@media (width > 900px) {
+    header img {
+        width: 10em;
+	    height: 3em;
+        margin-left: 10em;
+    }
+
+    header {
+        padding: 1em 0 0 0;
+        display: flex;
+        flex-direction: column; 
+        justify-content: center;
+        align-items: start;
+
+    }
+
+}
+
+
+
+
+
+/*************/
+/*   Nav     */
+/*************/
+
+nav {
+    position: fixed;
+    top: 66.4px;
+    left: 0; 
+    height: 100vh;
+    width: 250px;
+    background: white;
+    padding: 2rem;
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2); 
+    z-index: 998;
+}
+
+nav.open {
+    transform: translateX(0); 
+}
+
+
+/*Desktop*/
+@media (width > 900px) {
+    nav {
+        position: static;
+        height: auto;
+        width: 100%;
+        background: none;
+        box-shadow: none;
+        transform: none;
+        padding: 0;
+    }
+
+    nav button {
+        display: none;
+    }
+
+    .DesktopNav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        gap: 4em;
+        padding: 1em;
+        justify-content: center;
+        background-color: #f4efe7;
+        align-items: center;
+    }
+
+    .DesktopNav li {
+        border-right: 1px solid #ccc;
+        margin-bottom: 0;
+        padding: 1em;
+        padding-right: 3em;
+    }
+
+    .DesktopNav li:last-child {
+        border-right: none;
+    }
+
+    .Hamburger {
+        display: none;
+    }
+}
+
+
+
+
+
+/*************/
+/*   Menu    */
+/*************/
+
+#MenuOpenen img {
+    width: 2em;
+    height: 2em;
+}
+
+#menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 2rem;
+}
+
+#menu li {
+    margin-bottom: 1.5rem;
+}
+
+#menu li a {
+    text-decoration: none;
+    color: #333;
+}
+
+#MenuSluiten{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+/*Desktop*/
+@media (width > 900px) {
+      #menu li {
+        margin-bottom: 0;
+        padding: 1em;
+        padding-right: 3em;
+    }
+
+    #menu {
+        margin-top: 0;
+    }
+
+   
+}
+
+
+
+
+/*****************/
+/* Login Section */
+/*****************/
+
+.LoginSection {
+    /* De volgende afbeelding heb ik van de Nespresso instagram: https://www.instagram.com/p/DRMW0w-DEzB/?img_index=1 */
+    /* Bron: https://www.w3schools.com/css/css3_gradients.asp*/
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url("../images/StartAfbeelding.png");
+
+    height:100vh; 
+
+    background-size:cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center ;
+
+    color: white;
+}
+
+.LoginSection h2,
+.LoginSection p {
+    margin-bottom: 0.5em;
+    font-weight: 50;
+    text-align: center;
+}
+
+
+#LoginKnop {
+    background-color: white;
+    color: black;
+
+    padding: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-top: 1em;
+
+
+    /* Bron: https://www.w3schools.com/cssref/css3_pr_border-radius.php*/
+    border-radius: 20px;
+    border-color: white;
+}
+
+/*Ipad air*/
+@media (width > 819px) {
+    .LoginSection {
+        height: 100vh;
+        font-size: x-large;
+        align-items: start ;
+    }
+
+    .LoginSection h2,
+    .LoginSection p {
+        display: flex;
+        text-align: left;
+        margin-left: 2em;
+    }
+
+    .LoginSection h2 {
+        margin-bottom: 0.25em;
+        margin-left: 1em ;
+    }
+
+    .LoginSection button {
+        align-self: center;  
+        font-size: large;
+
+    }
+}
+
+
+
+/*Desktop */
+@media (width > 900px) {
+    .LoginSection button {
+        align-self:flex-start;  
+        font-size: large;
+        margin-left: 3em;
+    }
+  
+
+}
+
+    
+        
+
+
+/***********/
+/* Widgets */
+/***********/
+
+.Widgets {
+    padding: 0 1em;  
+}
+
+.Widgets h3 {
+    font-size: var(--fs-h3);
+}
+
+.WidgetKoffie,
+.WidgetMachines,
+.WidgetAccessoires {
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px;
+    height: 15.375rem;
+    width: 100%;
+    margin: 2em 1em 1em 1em;
+    padding: 1.5em;
+    color: white;
+}
+
+/*Bron: https://www.w3schools.com/cssref/pr_background-image.php*/
+
+.WidgetKoffie {
+    background-image: url("../images/WidgetKoffie.png");
+}
+
+.WidgetMachines {
+    background-image: url("../images/WidgetMachines.png");
+}
+
+.WidgetAccessoires {
+    background-image: url("../images/WidgetAccessoires.png");
+    margin-bottom: 2em;
+}
+/* Tot hier is de bron gebruikt */
+
+/*Desktop*/
+@media (width > 900px) {
+     .Widgets {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .Widgets section {
+        margin: 1em;
+        margin-top: 3em;
+        margin-bottom: 3em;
+    }
+}
+
+
+
+/*****************************/
+/* Promotie en koffie sectie */
+/*****************************/
+
+.PromotiesEnKoffiesArtikel {
+    margin-left: 1em;
+    line-height: 1.6;
+}
+
+.PromotiesEnKoffiesArtikel h2,
+.PromotiesEnKoffiesArtikel p {
+    font-weight: 100;
+    margin-bottom: 0.5em;
+}
+
+.PromotiesEnKoffiesArtikel p {
+    padding-right: 1em;
+}
+
+.Carrousel {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 1em 0;
+}
+
+.Slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 1em;
+  padding: 0 1em;
+  list-style: none;
+  margin: 0;
+}
+
+.Slide {
+  width: 280.950px;
+  height: 374.600px ;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+.Kaart {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  color: white;
+  aspect-ratio: 3 / 4;    
+}
+
+.Kaart img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  object-position: center; 
+  display: block;
+  z-index: 1;
+}
+
+.KaartContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent 40%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  z-index: 2;
+}
+
+.KaartContent a {
+  margin-top: auto;
+  align-self: start;
+  background: white;
+  color: black;
+  padding: 0.7em 1.2em;
+  border-radius: 999px;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.KaartContent h2 {
+    font-size: var(--fs-basis);
+    font-weight: 100;
+}
+
+.KaartContent p {
+    font-size: var(--fs-klein);
+}
+
+/*Ipad en desktop*/
+@media (width > 819px) {
+    .PromotiesEnKoffiesArtikel{
+    margin-left: 2em;
+    }
+}
+
+
+
+
+/*******************/
+/* Boutique sectie */
+/*******************/
+
+.BoutiqueSectie{
+    /*afbeelding link: https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.nespresso.com%2Fnl%2Fnl%2Fboutique%2Famsterdam-van-baerlestraat&psig=AOvVaw2QQHXtFB3BBv41A5ydPqVL&ust=1763999039412000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCJiH2NbOiJEDFQAAAAAdAAAAABAE*/
+   background-image: 
+        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+        url("../images/BoutiqueNespresso.png");
+
+    height:100vh; 
+
+    background-size:cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:end;
+
+    color: white;
+    padding: 1em;
+    padding-bottom: 1em;
+    margin-top: 2em;
+    text-align: center;
+}
+
+.BoutiqueSectie div {
+    width: 100%;
+    
+    border: grey solid 0.5px;
+    border-radius: 20px;
+
+    
+    padding: 2em;
+    padding-top: 0.5em;
+    
+    font-size: var(--fs-klein);
+    
+    backdrop-filter: blur(10px);
+}
+
+.BoutiqueSectie p {
+    background-color: #876c43;
+
+    padding: .25em .5em;
+    border-radius: .25em;
+    display: inline-block;
+    margin: 0 auto;
+    
+    font-size: var(--fs-klein);
+   
+}
+
+.BoutiqueSectie h2 {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    font-weight: 100;
+}
+
+.BoutiqueSectie button {
+    background-color: #257a57;
+    color: white;
+    border-color: #257a57;
+    border-radius: 20px;
+
+    padding: 0.5em;
+    width:100%;
+}
+
+/*Ipad Air*/
+@media (width > 819px) {
+    section.BoutiqueSectie {
+        height: 50vh; 
+    }
+
+     .BoutiqueSectie h2 {
+        padding-bottom: 1em;
+    }
+
+    .BoutiqueSectie p {
+        margin-bottom: 1em;
+    }
+
+
+
+}
+
+/*Desktop*/
+@media (width > 900px) {
+    section.BoutiqueSectie {
+        display: flex;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .BoutiqueSectie div {
+        width: auto;
+        display: inline-block;
+        margin: 0 auto;
+        padding-left: 6em;
+        padding-right: 6em;
+
+    }
+
+    .BoutiqueSectie h2 {
+        padding-bottom: 1em;
+    }
+
+    .BoutiqueSectie p {
+        margin-bottom: 1em;
+        margin-top: 2em;
+    }
+
+    .BoutiqueSectie button {
+        max-width: 30%;
+    }
+}
+
+
+
+
+
+/***********************/
+/* Verandering artikel */
+/***********************/
+
+.VeranderingArtikel {
+    margin-left: 1em;
+    margin-top: 3em;
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+}
+
+.VeranderingArtikel p {
+    padding-right: 1em;
+}
+
+.CarrouselLink2 img {
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.CarrouselLink2 a {
+    padding: 0;
+}
+
+/*Ipad en desktop*/
+@media (width > 819px) {
+   .VeranderingArtikel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 5em;
+    } 
+}
+
+
+
+
+/********************/
+/* Voordelen sectie */
+/********************/
+
+.VoordelenSectie {
+    margin-bottom: 3em;
+    /*  Bron: https://www.w3schools.com/cssref/pr_dim_line-height.php*/
+    line-height: 1.6;
+}
+
+.VoordelenSectie img {
+    width: 100%;
+    padding: 1em;
+}
+
+.VoordelenSectie h2 {
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+    font-size: var(--fs-subkopje);
+    font-weight: var(--fw-semibold);
+}
+
+.VoordelenSectie p {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    padding-right: 1em;
+}
+
+.VoordelenSectie a {
+    margin-left: 1em;
+    margin-top: 1.5em;
+    color: #876c43;
+    text-decoration: underline;
+}
+
+
+/*Ipad Air*/
+@media (width > 819px) {
+    .VoordelenSectie {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .VoordelenSectie img {
+        max-width: 50%;
+        padding: 0 1em 0 2em;
+    }
+
+    .VoordelenSectie div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/*Desktop*/
+@media (width > 900px) {
+    .VoordelenSectie {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .VoordelenSectie div {
+        flex-basis: 42%;
+    }
+
+
+}
+
+
+
+
+/**********************/
+/* Doe de test sectie */
+/**********************/
+
+.DoeDeTest {
+    background-image: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+     url("../readme-images/DoeDeTestAchtergrond.png");
+    background-repeat: no-repeat;
+    background-size:cover; 
+    background-position: center;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    color: white;
+
+    padding: 1.5em;
+}
+
+.DoeDeTest h2 {
+    margin-bottom: 1em;
+    font-size: var(--fs-subkopje);
+    font-weight: var(--fw-semibold);
+}
+
+.DoeDeTest button {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    padding: 0.5em;
+
+    background-color: #17171a;
+    color: white;
+
+    border: #17171a solid 1px;
+    border-radius: 20px;
+
+    width: 100%;
+}
+
+
+/*Ipad Air*/
+@media (width > 819px) {
+    .DoeDeTest button {
+        width: 30vh;
+        font-size: var(--fs-subkopje);
+    }
+
+    .DoeDeTest div {
+        padding: 0 6em;
+    }
+}
+
+/*Desktop*/
+ @media (width > 900px) {
+    .DoeDeTest div {
+        padding: 0 10em;
+        font-size: var(--fs-subkopje);
+    }
+
+}
+
+
+
+/**********/
+/* Footer */
+/**********/
+
+footer section {
+    margin: 1em;
+    margin-top: 1.5em;
+    color: #6f6f70 ;
+}
+
+.OntdekDeApp img {
+    width: 7em;
+	height: 4em;
+}
+
+.ThuiswinkelWaarborg img {
+    width: 12em;
+    height: 4em;
+}
+
+.MenuLijst li {
+    list-style-type: none;
+}
+
+
+/*  Bron: https://css-tricks.com/using-styling-the-details-element/*/
+.FooterLijst {
+    border-top: #000 solid 0.5px;
+    padding: 0.5em ;
+}
+
+.FooterSocials ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+}
+
+.FooterSocials img {
+    width: 3em;
+    height: 3em;
+}
+
+.Copyright {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.Copyright img {
+	width: 7em;
+	height: 2em;
+    margin-right: 1em;
+}
+
+.Copyright p {
+    color: #6f6f70;
+    font-size: var(--fs-klein);
+    margin-bottom: 0;
+}
+
+/* iPad Air*/ 
+@media (width > 819px) {
+    .FooterSocials {
+        flex-direction: column;
+    }
+
+    .Copyright {
+        flex-direction: column;
+        justify-content: end;
+    }
+    
+    .MenuLijst {
+        display: flex;              
+        justify-content: center; 
+        gap: 5em; 
+        align-items: center;
+        margin-top: 1em; 
+    }
+
+    .FooterLijst {
+        border-top: none;          
+        padding: 0;
+    }
+
+    .FooterLijst details summary {
+        cursor: default;           
+    }
+
+    .FooterLijst details[open] > ul,
+    .FooterLijst details ul {
+        display: block;             
+    }
+
+    .OntdekDeApp, .ThuiswinkelWaarborg {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 1em 0;
+    }
+
+    .OntdekDeApp p, .ThuiswinkelWaarborg p {
+        margin-right: 1em;
+    }
+
+    .SocialsEnCopyright {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1em;
+        padding-top: 1em;
+        background-color: #faf9f8;
+    }
+
+    footer section {
+        margin: 0;
+    }
+}
+
+/* Desktop */
+@media (width > 900px) {
+    .MenuLijst {
+        gap: 10em; 
+    }
+
+    .SocialsEnCopyright {
+        justify-content: space-around; 
+    }
+
+    .FooterSocials {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******************************************************************/
+/*             Hier begint de code voor de product pagina          */
+/*******************************************************************/
+
+
+.ProductPagina {
+    background-color: rgb(246, 244, 241);
+
+}
+
+
+
+/******************************/
+/*   Terug naar Home sectie   */
+/******************************/
+
+.TerugNaarHome {
+    display: flex;
+    align-items: center;
+
+    background-color: #ded9d9;
+    position: sticky;
+    padding: 0.5em;
+    top: 0px;
+    z-index: 9;
+   
+}
+
+.TerugNaarHome img{
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+
+}
+
+/*Ipad Air en Desktop*/
+@media (width > 819px) {
+    .TerugNaarHome {
+        padding-left: 5em;
+        font-size: larger;
+    }
+}
+
+
+
+
+
+
+
+
+/****************/
+/*    Main      */
+/****************/
+
+.PixieZilverNespresso p {
+    text-align: center;
+}
+
+.PixieZilverNespresso p:nth-of-type(6) {
+    margin-bottom: 1em;
+}
+
+/*Desktop*/
+@media (width > 1360px) {
+    .ProductPixie {
+        max-width: 100%;
+        max-height: 636px;
+
+        margin: 0 20em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    
+}
+
+
+
+
+
+/***********************/
+/*  Product Carroussel */
+/***********************/
+
+
+/* Ik heb deze video als bron gebruikt: https://www.youtube.com/watch?v=gmI5nvzv170&t=3s */
+.FotoCarrousel {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: rgb(246, 244, 241);
+    padding: 2em 0;
+}
+
+.FotoCarrousel ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 300%;
+    transition: transform 0.4s ease;
+}
+
+.FotoCarrousel li {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.FotoCarrousel li img {
+    width: 70%;
+    height: auto;
+    pointer-events: none;
+}
+
+.KnopTerug, 
+.KnopVerder {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none; 
+    width: 2em;   
+    height: 2em;   
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.KnopTerug:hover, 
+.KnopVerder:hover {
+    background: #989898;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.KnopTerug::before {
+    content: '<';
+    font-size: 1.5em;
+}
+
+.KnopVerder::before {
+    content: '>';
+    font-size: 1.5em;
+}
+
+.KnopTerug { 
+    left: 1em; 
+    z-index: 8;
+}
+
+.KnopVerder { 
+    right: 1em; 
+    z-index: 8;
+}
+
+.Dots {
+    display: flex;
+    justify-content: center;
+    gap: .5em;
+    margin-top: 1em;
+}
+
+.Dot {
+    width: .8em;
+    height: .8em;
+    border-radius: 50%;
+    border: none;
+    background: #ccc;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.Dot:hover {
+    background: #999;
+}
+
+.Dot.actief {
+    background-color: black;
+}
+
+
+
+
+
+
+/*************************/
+/*    ProductDetails     */
+/*************************/
+
+.ProductDetails{
+    background-color: white;
+    margin: 1em;
+    text-align: center;
+    box-shadow: rgb(201, 201, 201) 1px 1px 5px;
+}
+
+.ProductDetails label {
+    font-size: var(--fs-klein);
+    
+    background-color: #8f7247;
+    color: white;
+
+    padding: 0.25em;
+    margin-top: 2em;
+
+    border-radius: 5px;
+
+
+}
+
+.ProductDetails ul {
+    padding: 1em;
+}
+
+.ProductDetails h2 {
+    margin-bottom: 0.25em;
+    margin-top: 0.25em;
+    padding-top:0.75em;
+}
+.ProductDetails p:first-of-type {
+    color: #565656;
+    font-size: var(--fs-klein);
+}
+
+.ProductDetails p:nth-of-type(2) {
+    color: #257a57;
+    font-size: var(--fs-h3);
+    margin-top: 2em;
+}
+
+.ProductDetails p:nth-of-type(3) {
+    color: #565656;
+    font-size: var(--fs-klein);
+    margin-bottom: 3em;
+}
+
+/*Desktop versie*/
+@media (width > 900px) {
+    .ProductDetails {
+        min-width:50% ;
+        font-size: larger;
+        box-sizing: border-box;
+    }
+
+    .ProductDetails p:nth-of-type(2) {
+        margin-top: 1.5em;
+    }
+    
+    .ProductDetails p:nth-of-type(3) {
+        margin-bottom: 2em;
+    }
+
+    .FotoCarrousel {
+        height: 636px;
+        width: 769.66px;
+    }
+}
+
+
+
+
+
+.ProductFeatures {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+
+    background-color: rgb(240, 240, 240);
+}
+
+.ProductFeatures li img {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.5em;
+}
+
+.ProductFeatures li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    
+}
+
+.ProductFeatures p {
+    color: #565656;
+}
+
+.BekijkInKeuken {
+    text-align: center;
+    background-color: rgb(246, 244, 241) ;
+    padding: 2em;
+}
+
+
+
+
+
+/*********************/
+/* Aanbieding sectie */
+/*********************/
+
+.Aanbieding {
+    position: sticky;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ded9d9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 92px;
+    margin-top: 1em;
+}
+
+.Aanbieding button {
+    background-color: #257a57;
+    color: white;
+    width: fit-content;
+    padding: 1em;
+    margin: 2em;
+    border-color: #257a57;
+    border-radius: 10px;
+    font-size: var(--fs-basis);
+    font-weight: var(--fw-medium);
+}
+
+.ProductDetails .Aanbieding {
+    display: none;
+}
+
+
+@media (width > 1360px) {
+    .ProductDetails .Aanbieding {
+        display: flex;
+        font-size: var(--fs-klein);
+        background-color: white;
+    }
+    
+  
+    main > .Aanbieding {
+        display: none;
+    }
+
+    
+    .ProductDetails > h2 {
+        text-align: left;
+        padding-left: 1em;
+    }
+    .ProductDetails > p:nth-of-type(1),
+    .ProductDetails > p:nth-of-type(2),
+    .ProductDetails > p:nth-of-type(3) {
+        text-align: left;
+        padding-left: 2em;
+}
+}
+
+
+
+
+
+
+
+/***********************/
+/*    Carrousel 2      */
+/***********************/
+
+.CarrouselOpProductPagina {
+  width: 100%;
+  overflow: hidden;
+  padding: 2em 0 2em 0; 
+
+  background-color: white;
+}
+
+.CarrouselOpProductPagina ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2em;
+
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    padding: 1em;
+
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    background-color: white;
+}
+
+.CarrouselOpProductPagina li {
+    flex: 0 0 80%; 
+    scroll-snap-align: center;
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: flex-start;
+}
+
+.CarrouselOpProductPagina li img {
+  flex-shrink: 0;
+}
+
+.CarrouselOpProductPagina li h3 {
+    font-size: var(--fs-subkopje);
+    margin-bottom: 0.5em;
+    flex-shrink: 0;
+}
+
+.CarrouselOpProductPagina a {
+    color: #876c43;
+    text-decoration: underline;
+    margin-top: auto;
+}
+
+
+
+/*Ipad en Desktop*/
+@media (width > 819px) {
+    .CarrouselOpProductPagina li {
+        flex: 0 0 30%;
+        margin-bottom: 3em;
+    }
+}
+
+
+
+
+
+
+
+
+/*******************************/
+/*    Iconic design sectie     */
+/*******************************/
+
+.IconicDesign {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(240, 240, 240);
+    padding: 2em;
+}
+
+.IconicDesign h2 {
+    padding-bottom: 0.5em;
+}
+
+.IconicDesign p {
+    margin-bottom: 1em;
+}
+
+video {
+    width: 100%;
+}
+
+/*Ipad Air*/
+@media (width > 819px) {
+    .IconicDesign {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .IconicDesign div {
+        flex-direction: column;
+        order: 2;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+    video {
+        min-width: 50%;
+        margin-left: 3em;
+    }
+}
+
+/*Desktop*/
+@media (width > 900px) {
+    .IconicDesign div {
+        margin-right: 8em;
+    }
+}
+
+
+/*****************/
+/** Focus State **/
+/*****************/
+
+a:focus,
+button:focus,
+.Dot:focus {
+    outline: 2px solid #257a57;
+    outline-offset: 2px;
+}
+
+
+
+/*******************/
+/* DARK MODE       */
+/*******************/
+
+/*Bron: Dark modus code van de slides (Week 1, werkgroep 1: presentatie over custom proporties)*/
+
+@media (prefers-color-scheme: dark) {
+    
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    
+    header {
+        background-color: #2a2a2a;
+        box-shadow: rgba(255, 255, 255, 0.1) 2px 2px 5px;
+    }
+
+    header button {
+        background-color: #2a2a2a;
+    }
+
+    
+    nav {
+        background-color: #2a2a2a;
+        box-shadow: 4px 0 15px rgba(255, 255, 255, 0.1);
+    }
+
+    .DesktopNav {
+        background-color: #2a2a2a;
+    }
+
+    .DesktopNav li {
+        border-right: 1px solid #4a4a4a;
+    }
+
+    #menu li a {
+        color: #e0e0e0;
+    }
+
+    
+    .LoginSection {
+        background-image: 
+            linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+            url("../readme-images/StartAfbeelding.png");
+    }
+
+    #LoginKnop {
+        background-color: #e0e0e0;
+        color: #1a1a1a;
+        border-color: #e0e0e0;
+    }
+
+    
+    .PromotiesEnKoffiesArtikel {
+        color: #e0e0e0;
+    }
+
+    
+    .KaartContent {
+        background: linear-gradient(to bottom, rgba(0,0,0,0.7), transparent 40%);
+    }
+
+    .KaartContent a {
+        background: #e0e0e0;
+        color: #1a1a1a;
+    }
+
+    
+    .BoutiqueSectie {
+        background-image: 
+            linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+            url("../readme-images/BoutiqueNespresso.png");
+    }
+
+    .BoutiqueSectie div {
+        border: #4a4a4a solid 0.5px;
+        backdrop-filter: blur(10px);
+        background-color: rgba(30, 30, 30, 0.3);
+    }
+
+    
+    .VeranderingArtikel {
+        color: #e0e0e0;
+    }
+
+    
+    .VoordelenSectie {
+        background-color: #1a1a1a;
+    }
+
+    .VoordelenSectie h2,
+    .VoordelenSectie p {
+        color: #e0e0e0;
+    }
+
+    .VoordelenSectie a {
+        color: #b8935e;
+    }
+
+    
+    .DoeDeTest {
+        background-image: 
+            linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url("../readme-images/DoeDeTestAchtergrond.png");
+    }
+
+    .DoeDeTest button {
+        background-color: #e0e0e0;
+        color: #1a1a1a;
+        border-color: #e0e0e0;
+    }
+
+   
+    footer section {
+        background-color: #1a1a1a;
+        color: #9a9a9a;
+    }
+
+    .FooterLijst {
+        border-top: #4a4a4a solid 0.5px;
+    }
+
+    .FooterLijst summary,
+    .FooterLijst a {
+        color: #9a9a9a;
+    }
+
+    .SocialsEnCopyright {
+        background-color: #2a2a2a !important;
+    }
+
+    .Copyright p {
+        color: #9a9a9a;
+    }
+
+
+
+
+
+    /* PRODUCTPAGINA */
+    .ProductPagina {
+        background-color: #1a1a1a;
+    }
+
+    .TerugNaarHome {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    .FotoCarrousel {
+        background: #1a1a1a;
+    }
+
+    .KnopTerug, 
+    .KnopVerder {
+        background: #3a3a3a;
+        color: #e0e0e0;
+    }
+
+    .KnopTerug:hover, 
+    .KnopVerder:hover {
+        background: #4a4a4a;
+    }
+
+    .Dot {
+        background: #4a4a4a;
+    }
+
+    .Dot.actief {
+        background-color: #e0e0e0;
+    }
+
+    .ProductDetails {
+        background-color: #2a2a2a;
+        box-shadow: rgba(255, 255, 255, 0.1) 1px 1px 5px;
+    }
+
+    .ProductDetails h2,
+    .ProductDetails p {
+        color: #e0e0e0;
+    }
+
+    .ProductDetails p:first-of-type {
+        color: #b0b0b0;
+    }
+
+    .ProductDetails p:nth-of-type(3) {
+        color: #b0b0b0;
+    }
+
+    .ProductFeatures {
+        background-color: #1a1a1a;
+    }
+
+    .ProductFeatures p {
+        color: #b0b0b0;
+    }
+
+    .BekijkInKeuken {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    .Aanbieding {
+        background: #2a2a2a;
+    }
+
+    .CarrouselOpProductPagina {
+        background-color: #2a2a2a;
+    }
+
+    .CarrouselOpProductPagina li {
+        color: #e0e0e0;
+    }
+
+    .CarrouselOpProductPagina a {
+        color: #b8935e;
+    }
+
+    .IconicDesign {
+        background-color: #1a1a1a;
+    }
+
+    .IconicDesign h2,
+    .IconicDesign p {
+        color: #e0e0e0;
+    }
+}
