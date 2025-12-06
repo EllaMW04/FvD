@@ -286,5 +286,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   9. Dark modus code van de slides (Week 1, werkgroep 1: presentatie over custom proporties)
   10. https://www.youtube.com/watch?v=gmI5nvzv170&t=3s (Carrousel met html en css)
   11. https://www.w3schools.com/css/css3_gradients.asp
+  12. https://www.w3schools.com/accessibility/accessibility_skip_links.php
 
 </details>
