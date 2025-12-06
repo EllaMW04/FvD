@@ -238,7 +238,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Je uitkomst - karakteristiek screenshots:
   <img src="readme-images/ScreenShot_Index_Mobiel.jpg" width="375px" alt="uitomst opdracht 1">
   <img src="readme-images/ScreenShot_Index_Ipad.jpg" width="475px" alt="uitomst opdracht 1">
-  <img src="readme-images/ScreenShot_Index_Laptop.jpg" width="575px" alt="uitomst opdracht 1">
+  <img src="readme-images/ScreenSjot_Index_Laptop.jpg" width="575px" alt="uitomst opdracht 1">
 
   <img src="readme-images/ScreenShot_ProductPagina_Mobiel.jpg" width="375px" alt="uitomst opdracht 1">
    <img src="readme-images/ScreenShot_ProductPagina_Ipad.jpg" width="475px" alt="uitomst opdracht 1">
