@@ -238,7 +238,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Je uitkomst - karakteristiek screenshots:
   <img src="readme-images/ScreenShot_Index_Mobiel.jpg" width="375px" alt="uitomst opdracht 1">
   <img src="readme-images/ScreenShot_Index_Ipad.jpg" width="475px" alt="uitomst opdracht 1">
-  <img src="readme-images/ScreenSjot_Index_Laptop.jpg" width="575px" alt="uitomst opdracht 1">
+  <img src="readme-images/ScreenSjot_Index_Laptop.png" width="575px" alt="uitomst opdracht 1">
 
   <img src="readme-images/ScreenShot_ProductPagina_Mobiel.jpg" width="375px" alt="uitomst opdracht 1">
    <img src="readme-images/ScreenShot_ProductPagina_Ipad.jpg" width="475px" alt="uitomst opdracht 1">
@@ -249,7 +249,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Dit ging goed/Heb ik geleerd: 
   Wat goed ging is dat ik het coderen opzich redelijk snel kon oppakken. Aan het begin een beetje paniek ervoor gehad of ik het nog wel kon. Wat ik geleerd heb (grootste punten) is hoe je responsive websites kan maken en hoe je een hamburger menu maakt. Het is vooral extra leuk als het dan ook echt lukt en je ziet dat het werkt. Ik heb ook geleerd dat dit vak wel samenkomt met redelijk wat dieptepunten in het proces. Ik ben namelijk 3 dagen voor de deadline overgestapt van surface plane naar responsive. Dat soort abrupte keuzes kwamen de hele tijd voor de afgelopen paar weken. Ik vond het wel echt weer leerzaam en leuk. 
 
-  <img src="readme-images/" width="375px" alt="top">
+  <img src="readme-images/HamburgerMenu_SS.jpg.png" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
@@ -257,7 +257,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   Ook wat niet helemaal meer gelukt is om de dark modus ook volledig goed te houden in contrast kleuren. Er is dus wel een dark modus maar nog niet volledig goed qua wit/zwart gebruik.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  <img src="readme-images/DarkModus_Verbetering.jpg.png" width="375px" alt="bummer">
 </details>
 
 
