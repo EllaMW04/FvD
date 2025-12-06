@@ -69,6 +69,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   - Zit geen groot kleuren contrast in. Heel veel gebruikte kleuren zijn hoogswaarschijnlijk moeilijk te zien voor mensen met beperkt zicht en/of kleurenblind zijn.
 
     Of te wel wat kan beter:
+    - Skip naar main content
     - Overal alt tag toevoegen en invullen
     - Licht/dark modus toevoegen
     - Zo min mogelijk gebruik van div
@@ -173,8 +174,25 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken na test in 9<sup>e</sup> werkgroep</summary>
 
   ### Bevindingen
-  Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er verbeterd is):
+  Dit kon beter de vorige keer: 
+    - Skip naar main content
+    - Overal alt tag toevoegen en invullen
+    - Licht/dark modus toevoegen
+    - Zo min mogelijk gebruik van div
+    - Font weight wat groter maken zodat het voor iedereen zo goed mogelijk leesbaar kan zijn.
+    - Contrast kleuren beter maken.
 
+  Wat ik nu heb gedaan:
+  - Ik heb een Skip naar main content link toegevoegd. Niet zichtbaar in je scherm totdat je op tab drukt. Druk je op Enter dan ga je direct door naar de main         content. Blijf je op tab drukken dan ga je alle linkjes langs.
+  - Ik heb overal alt tekst toegevoegd behalve bij deccoratieve images. Zoals het logo van Nespresso dat is namelijk niet per se nodig.
+  - Er is een dark modus toegevoegd nu doormiddel van een media query.
+  - Div heb ik in vergelijking met het vorige toets moment wel iets meer gebruikt. Merkte dat verder in het stylen het af en toe wel echt nodig was om te doen. Dus wel wat meer gebruikt, maar met een goede onderbouwing waarom.
+  - Font weight is groot genoeg voor iedereen. Van mobiel tot aan dekstop. Opzich had de Nespresso site zelf dat ook zo hier en daar al wel echt goed, dus heel veel aanpassing kostte het niet.
+  - De kleuren op de Nespresso site zelf en zeker op de product pagina zijn erg laag in contrast. Ik heb daarom de kleuren die niet lekker samen gingen wat aangepast zodat het dan wel echt beter te lezen is. 
+
+    Eind conclusie: De toegankelijkheid is absoluut verbeterd in vergelijking met de vorige keer dat ik dit deed.
+
+  
 </details>
 
 
@@ -224,11 +242,13 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   ### Dit ging goed/Heb ik geleerd: 
   Wat goed ging is dat ik het coderen opzich redelijk snel kon oppakken. Aan het begin een beetje paniek ervoor gehad of ik het nog wel kon. Wat ik geleerd heb (grootste punten) is hoe je responsive websites kan maken en hoe je een hamburger menu maakt. Het is vooral extra leuk als het dan ook echt lukt en je ziet dat het werkt. Ik heb ook geleerd dat dit vak wel samenkomt met redelijk wat dieptepunten in het proces. Ik ben namelijk 3 dagen voor de deadline overgestapt van surface plane naar responsive. Dat soort abrupte keuzes kwamen de hele tijd voor de afgelopen paar weken. Ik vond het wel echt weer leerzaam en leuk. 
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  <img src="readme-images/" width="375px" alt="top">
 
 
   ### Dit was lastig/Is niet gelukt:
   Het was mij niet meer gelukt om de header helemaal compleet te maken en de footer. Die waren responsive ook zo lastig, dat ik dat qua tijd niet meer voor elkaar heb gekregen. Ik ben zo goed mogelijk in de buurt gekomen, maar ik wilde bij mijn code blijven die ik nog begreep ipv dat ik het wel misschien had, maar dat mijn code een groot zooitje was.
+
+  Ook wat niet helemaal meer gelukt is om de dark modus ook volledig goed te houden in contrast kleuren. Er is dus wel een dark modus maar nog niet volledig goed qua wit/zwart gebruik.
 
   <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
 </details>
